@@ -1,48 +1,58 @@
 # Control per Veu amb Electron i Vue 3
 
-Aquest projecte és una prova de concepte (PoC) per a la implementació d'interfícies d'usuari per veu (VUI) en aplicacions d'escriptori. Utilitza la Web Speech API nativa de Chromium integrada en un entorn d'Electron amb Vue 3 i Vuetify.
+Aquesta aplicació és una prova de concepte dedicada a la implementació d'interfícies d'usuari per veu (VUI). El projecte demostra com integrar la Web Speech API en un entorn d'escriptori utilitzant Electron, Vue 3 i la biblioteca de components Vuetify.
 
-## Tecnologies utilitzades
+---
 
-* Framework: Vue 3 (Composition API)
-* Entorn d'escriptori: Electron
-* Disseny: Vuetify 3
-* API de veu: Web Speech API (configurada en ca-ES)
+## Especificacions Tècniques
 
-## Requisits del sistema
+* **Framework Core:** Vue 3 (Composition API)
+* **Runtime d'Escriptori:** Electron
+* **Sistema de Disseny:** Vuetify 3
+* **Processament de Veu:** Web Speech API (Localització: ca-ES)
 
-Per al correcte funcionament de l'aplicació cal disposar de:
-* Node.js i npm instal·lats.
-* Un micròfon configurat al sistema operatiu.
-* Permisos d'accés al hardware gestionats pel procés principal d'Electron (background.js).
+## Requisits Previs
 
-## Instal·lació
+Per assegurar el funcionament correcte del sistema, cal complir els següents punts:
+* Disposar de Node.js i npm en la darrera versió estable.
+* Tenir un micròfon correctament configurat i actiu al sistema operatiu.
+* L'aplicació requereix permisos de hardware gestionats mitjançant el procés principal a background.js.
 
-1. Clona el repositori o descarrega els fitxers del projecte.
-2. Instal·la les dependències necessàries:
-   npm install
+---
 
-## Execució
+## Instal·lació i Posada en Marxa
 
-Per carregar l'aplicació en mode desenvolupament, executa la següent comanda:
-   npm run dev
+1. **Preparació del directori:**
+   Clona el repositori o descarrega els fitxers font al teu equip.
 
-## Funcionalitats i ús
+2. **Instal·lació de dependències:**
+   Executa la comanda: npm install
 
-L'aplicació permet la interacció mitjançant llenguatge natural. Un cop activat el micròfon amb el botó d'escolta, el sistema processa la veu en temps real i executa accions basades en paraules clau:
+3. **Llançament en mode desenvolupament:**
+   Inicia l'entorn de treball amb la instrucció: npm run dev
 
-* Salutació: En dir "Saluda", l'app respon amb un missatge de benvinguda.
-* Ajuda: Proporciona informació sobre el propòsit de la prova de concepte.
-* Control de tema: Permet alternar entre el mode visual clar i fosc mitjançant les ordres "Mode clar" i "Mode fosc".
-* Neteja: L'ordre "Esborra" o "Borrar" reinicia l'estat de la interfície i el color del component.
+---
 
-### Gestió d'errors i feedback
-* Interim Results: L'usuari pot veure el text que el sistema està detectant abans de processar la comanda final.
-* Notificacions: Si una comanda no es reconeix, es mostra un snackbar vermell amb la transcripció capturada.
-* Alertes: En cas d'error de hardware o de connexió, el sistema informa del problema.
+## Funcionalitats i Ordres Disponibles
 
-## Estructura del projecte
+L'aplicació permet una interacció fluida mitjançant llenguatge natural. Un cop activada l'escolta, el sistema reconeix paraules clau per executar accions específiques:
 
-* src/background.js: Configuració dels permisos de sessió per al micròfon.
-* src/composables/useSpeechRecognition.js: Lògica reactiva per gestionar l'activació i els resultats de la Speech API.
-* src/components/VoiceCommander.vue: Component de la interfície amb la lògica de reacció a les comandes.
+* **Salutació:** L'ordre "Saluda" genera una resposta de benvinguda a la interfície.
+* **Ajuda:** Proporciona detalls tècnics i informació sobre el propòsit de la prova de concepte.
+* **Control de Tema:** Canvi dinàmic entre modes visuals amb les ordres "Mode clar" o "Mode fosc".
+* **Manteniment:** L'ús de les paraules "Esborra" o "Borrar" restableix l'estat inicial i els colors de la interfície.
+
+### Gestió de Feedback
+* **Resultats Intermedis:** La interfície mostra en temps real el text que el sistema està processant abans de confirmar la comanda.
+* **Sistema de Notificacions:** Si una ordre no és vàlida, s'activa un snackbar que mostra la transcripció capturada per facilitar el diagnòstic.
+* **Seguretat i Errors:** El sistema detecta i informa sobre errors de hardware o de connexió de manera immediata.
+
+---
+
+## Arquitectura del Projecte
+
+L'estructura de fitxers principal es divideix segons la seva responsabilitat:
+
+* src/background.js: Administra la sessió d'Electron i els permisos de seguretat del micròfon.
+* src/composables/useSpeechRecognition.js: Conté la lògica reactiva que encapsula la Speech API.
+* src/components/VoiceCommander.vue: Centralitza la interfície d'usuari i el diccionari de comandes.
