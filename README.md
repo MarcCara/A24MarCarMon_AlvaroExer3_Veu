@@ -40,7 +40,7 @@ L'aplicació permet una interacció fluida mitjançant llenguatge natural. Un co
 * **Hola:** L'ordre "Hola" genera una resposta de benvinguda a la interfície.
 * **Ajuda:** Proporciona detalls tècnics i informació sobre el propòsit de la prova de concepte.
 * **Mode clar y Mode fosc:** Canvi dinàmic entre modes visuals amb les ordres "Mode clar" o "Mode fosc".
-* **Borrar:** L'ús de la paraula "Borrar" restableix l'estat inicial i els colors de la interfície.
+* **Atura't:** L'ús de la paraula "Atura't" restableix l'estat inicial i els colors de la interfície.
 
 ### Gestió de Feedback
 * **Resultats Intermedis:** La interfície mostra en temps real el text que el sistema està processant abans de confirmar la comanda.
