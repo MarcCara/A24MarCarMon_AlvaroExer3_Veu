@@ -26,10 +26,10 @@ Per assegurar el funcionament correcte del sistema, cal complir els següents pu
    Clona el repositori o descarrega els fitxers font al teu equip.
 
 2. **Instal·lació de dependències:**
-   Executa la comanda: npm install
+   Executa la comanda: *npm install*
 
 3. **Llançament en mode desenvolupament:**
-   Inicia l'entorn de treball amb la instrucció: npm run dev
+   Inicia l'entorn de treball amb la instrucció: *npm run dev*
 
 ---
 
@@ -37,10 +37,10 @@ Per assegurar el funcionament correcte del sistema, cal complir els següents pu
 
 L'aplicació permet una interacció fluida mitjançant llenguatge natural. Un cop activada l'escolta, el sistema reconeix paraules clau per executar accions específiques:
 
-* **Salutació:** L'ordre "Saluda" genera una resposta de benvinguda a la interfície.
+* **Hola:** L'ordre "Hola" genera una resposta de benvinguda a la interfície.
 * **Ajuda:** Proporciona detalls tècnics i informació sobre el propòsit de la prova de concepte.
-* **Control de Tema:** Canvi dinàmic entre modes visuals amb les ordres "Mode clar" o "Mode fosc".
-* **Manteniment:** L'ús de les paraules "Esborra" o "Borrar" restableix l'estat inicial i els colors de la interfície.
+* **Mode clar y Mode fosc:** Canvi dinàmic entre modes visuals amb les ordres "Mode clar" o "Mode fosc".
+* **Borrar:** L'ús de la paraula "Borrar" restableix l'estat inicial i els colors de la interfície.
 
 ### Gestió de Feedback
 * **Resultats Intermedis:** La interfície mostra en temps real el text que el sistema està processant abans de confirmar la comanda.
