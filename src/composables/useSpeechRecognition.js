@@ -68,6 +68,7 @@ export function useSpeechRecognition() {
   const start = () => {
     if (isListening.value) return;
     try {
+      console.log("🚀 Intentant iniciar reconeixement...");
       recognition.start();
     } catch (e) {
       console.error("Error starting recognition", e)

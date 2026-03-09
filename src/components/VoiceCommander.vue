@@ -140,6 +140,18 @@ watch(transcript, (newText) => {
             </div>
         </v-expand-transition>
 
+      <!-- Simulator/Debug (For testing when Speech API fails) -->
+       <div class="mt-8 pt-4 border-t border-opacity-10 w-100">
+          <p class="text-caption text-disabled mb-2">Simulador de comanda (si el micro falla):</p>
+          <v-text-field
+            placeholder="Escriu aqui: mode fosc, esborra, saluda..."
+            variant="underlined"
+            density="compact"
+            hide-details
+            @keyup.enter="e => { processCommand(e.target.value); e.target.value = ''; }"
+          ></v-text-field>
+       </div>
+
     </v-card>
 
     <v-snackbar v-model="snackbar" color="error" timeout="3000" location="bottom">

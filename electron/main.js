@@ -22,8 +22,12 @@ function createWindow() {
         icon: path.join(process.env.VITE_PUBLIC, 'favicon.ico'),
         webPreferences: {
             preload: path.join(__dirname, 'preload.mjs'),
+            spellcheck: true
         },
     })
+
+    // Set a standard User-Agent to improve compatibility with Google services
+    win.webContents.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
 
     // Test active push message to Electron-Renderer.
     win.webContents.on('did-finish-load', () => {
