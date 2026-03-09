@@ -15,15 +15,15 @@ const processCommand = (text) => {
   const command = text.toLowerCase().trim();
   
   if (command.includes('saluda') || command.includes('hola')) {
-    uiMessage.value = "Hola!";
+    uiMessage.value = "Hola! Benvingut a l'aplicació.";
     statusColor.value = "success";
   } 
   else if (command.includes('ajuda')) {
-    uiMessage.value = "Digues: Hola, Mode Fosc, Esborra...";
+    uiMessage.value = "Aquesta és una prova de concepte.";
     statusColor.value = "info";
   }
   else if (command.includes('esborra') || command.includes('borrar')) {
-    uiMessage.value = "A punt";
+    uiMessage.value = "Esperant comanda...";
     statusColor.value = "primary";
     transcript.value = ''; 
   }
@@ -41,7 +41,7 @@ const processCommand = (text) => {
      statusColor.value = "grey";
   }
   else {
-    snackbarText.value = `No he entès: "${text}"`;
+    snackbarText.value = `Comanda no reconeguda: "${text}"`;
     snackbar.value = true;
   }
 };
@@ -142,8 +142,8 @@ watch(transcript, (newText) => {
 
     </v-card>
 
-    <v-snackbar v-model="snackbar" color="surface-variant" content-class="text-on-surface-variant text-center" timeout="2000" location="bottom" rounded="pill" elevation="0">
-      <span class="text-body-2">{{ snackbarText }}</span>
+    <v-snackbar v-model="snackbar" color="error" timeout="3000" location="bottom">
+      <span>{{ snackbarText }}</span>
     </v-snackbar>
   </v-container>
 </template>
