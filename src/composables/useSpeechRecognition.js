@@ -15,7 +15,7 @@ export function useSpeechRecognition() {
 
   const recognition = new Recognition();
   recognition.lang = 'ca-ES';
-  recognition.continuous = true;
+  recognition.continuous = false;
   recognition.interimResults = true;
 
   recognition.onstart = () => {
